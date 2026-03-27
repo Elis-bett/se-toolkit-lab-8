@@ -3,16 +3,16 @@ members = [
   "backend",
   "qwen-code-api",
   "mcp/mcp-lms",
-  "mcp/mcp-obs",
-  "nanobot-websocket-channel/nanobot-webchat",
-  "nanobot-websocket-channel/client-telegram-bot",
+  # "mcp/mcp-obs",
+  # "nanobot-websocket-channel/nanobot-webchat",
+  # "nanobot-websocket-channel/client-telegram-bot",
 ]
 
 [tool.uv.sources]
 mcp-lms = { path = "mcp/mcp-lms", editable = true }
-mcp-obs = { path = "mcp/mcp-obs", editable = true }
-nanobot-webchat = { path = "nanobot-websocket-channel/nanobot-webchat", editable = true }
-client-telegram-bot = { path = "nanobot-websocket-channel/client-telegram-bot", editable = true }
+# mcp-obs = { path = "mcp/mcp-obs", editable = true }
+# nanobot-webchat = { path = "nanobot-websocket-channel/nanobot-webchat", editable = true }
+# client-telegram-bot = { path = "nanobot-websocket-channel/client-telegram-bot", editable = true }
 
 [dependency-groups]
 dev = [
