@@ -5,6 +5,7 @@ members = [
   "mcp/mcp-lms",
   "nanobot",
   "nanobot-websocket-channel/nanobot-webchat",
+  "mcp/mcp-observability",
   # Uncomment these later in the lab after you add the matching repos/packages.
   # "mcp/mcp-obs",
   # "nanobot-websocket-channel/nanobot-channel-protocol",
