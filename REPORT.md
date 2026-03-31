@@ -195,11 +195,63 @@ Which lab would you like to see the scores for?
 
 ## Task 2A — Deployed agent
 
-<!-- Paste a short nanobot startup log excerpt showing the gateway started inside Docker -->
-
+Nanobot gateway startup log:
+```
+🐈 Starting nanobot gateway version 0.1.4.post5 on port 18790...
+✓ Channels enabled: webchat
+✓ Heartbeat: every 1800s
+MCP server 'lms': connected, 9 tools registered
+Agent loop started
+```
 ## Task 2B — Web client
 
-<!-- Screenshot of a conversation with the agent in the Flutter web app -->
+-What can you do in this system?
+
+-I'm nanobot, a helpful AI assistant with several capabilities:
+
+## Core Functions
+- **File Management**: Read, write, and edit files in the workspace
+- **System Commands**: Execute shell commands safely with time limits
+- **Web Tools**: Search the web and fetch content from URLs
+- **Memory System**: Access long-term memory (MEMORY.md) and search history (HISTORY.md)
+
+## Learning Management System (LMS) Skills
+I can interact with course data to:
+- List available labs and exercises
+- Show pass rates, scores, and completion statistics
+- Display learner performance and timelines
+- Get group performance metrics
+- Show top performers for specific labs
+
+## Scheduling & Reminders
+- Set up cron jobs for scheduled reminders
+- Create recurring tasks
+- Manage heartbeat tasks for periodic operations
+
+## Interactive UI
+On supported channels, I can present interactive choices when you need to select between options.
+
+## Additional Capabilities
+- Spawn subagents for complex background tasks
+- Send messages with file attachments (images, documents, etc.)
+- Access various specialized skills like structured UI and memory management
+
+Is there something specific you'd like to explore or accomplish? I'm here to help!
+
+-Which lab has the lowest pass rate?
+
+-Based on my analysis of all the labs, I can now identify which lab has the lowest pass rate. Let me summarize what I found:
+
+After checking all labs, Lab 02 has the lowest pass rate with a task that has a 0.0% pass rate:
+- In Lab 02, the task "Optional 2: Make your VM a proxy" has an average score of 0.0% with 3 attempts.
+
+There are also other low pass rates in different labs:
+- Lab 01: "Optional: Plan skill development" with 20.0% pass rate
+- Lab 02: "Optional 2: Make your VM a proxy" with 0.0% pass rate (lowest)
+- Lab 03: "Task 3: Implement the learners endpoint" with 50.0% pass rate
+- Lab 04: "Optional 1: CI/CD with GitHub Actions" with 33.8% pass rate
+
+**Lab 02 has the lowest pass rate overall**, specifically the task "Optional 2: Make your VM a proxy" which has a 0.0% pass rate. This suggests this particular task is especially challenging for students.
 
 ## Task 3A — Structured logging
 
