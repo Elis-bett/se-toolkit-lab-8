@@ -255,15 +255,100 @@ There are also other low pass rates in different labs:
 
 ## Task 3A — Structured logging
 
-<!-- Paste happy-path and error-path log excerpts, VictoriaLogs query screenshot -->
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-01 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:04,830 INFO [lms_backend.main] [main.py:62] [trace_id=1758c151c10c1b21e98b426e3895afa1 span_id=99322c66edd59ca0 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:04,831 INFO [lms_backend.auth] [auth.py:30] [trace_id=1758c151c10c1b21e98b426e3895afa1 span_id=99322c66edd59ca0 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-02 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:04,859 INFO [lms_backend.main] [main.py:74] [trace_id=1758c151c10c1b21e98b426e3895afa1 span_id=99322c66edd59ca0 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-02 HTTP/1.1" 200
+backend-1  | 2026-03-31 19:18:06,161 INFO [lms_backend.main] [main.py:62] [trace_id=e3b63bbdbed7de0b1499e3e65127f04e span_id=aff5e32e9cd0c8e3 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:06,161 INFO [lms_backend.auth] [auth.py:30] [trace_id=e3b63bbdbed7de0b1499e3e65127f04e span_id=aff5e32e9cd0c8e3 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:18:06,186 INFO [lms_backend.main] [main.py:74] [trace_id=e3b63bbdbed7de0b1499e3e65127f04e span_id=aff5e32e9cd0c8e3 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-03 HTTP/1.1" 200
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-03 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:07,533 INFO [lms_backend.main] [main.py:62] [trace_id=073942bbad1b005c222c5cee93b4d25c span_id=7111d5c1ea598906 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:07,534 INFO [lms_backend.auth] [auth.py:30] [trace_id=073942bbad1b005c222c5cee93b4d25c span_id=7111d5c1ea598906 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:18:07,554 INFO [lms_backend.main] [main.py:74] [trace_id=073942bbad1b005c222c5cee93b4d25c span_id=7111d5c1ea598906 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-04 HTTP/1.1" 200
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-04 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:08,910 INFO [lms_backend.main] [main.py:62] [trace_id=c00ccb31e4ba82ba08399aae0f2e43d0 span_id=95ade3f204c20f8d resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:08,910 INFO [lms_backend.auth] [auth.py:30] [trace_id=c00ccb31e4ba82ba08399aae0f2e43d0 span_id=95ade3f204c20f8d resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-05 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:08,930 INFO [lms_backend.main] [main.py:74] [trace_id=c00ccb31e4ba82ba08399aae0f2e43d0 span_id=95ade3f204c20f8d resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-05 HTTP/1.1" 200
+backend-1  | 2026-03-31 19:18:10,268 INFO [lms_backend.main] [main.py:62] [trace_id=9d8482093020fae9d075ec1125a05ff4 span_id=e92d8d35bb0baf27 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:10,269 INFO [lms_backend.auth] [auth.py:30] [trace_id=9d8482093020fae9d075ec1125a05ff4 span_id=e92d8d35bb0baf27 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:18:10,286 INFO [lms_backend.main] [main.py:74] [trace_id=9d8482093020fae9d075ec1125a05ff4 span_id=e92d8d35bb0baf27 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-06 HTTP/1.1" 200
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-06 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:18:11,666 INFO [lms_backend.main] [main.py:62] [trace_id=884313dc3c41736c516f8ab670d2dcc7 span_id=93617b46711cc65d resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:11,667 INFO [lms_backend.auth] [auth.py:30] [trace_id=884313dc3c41736c516f8ab670d2dcc7 span_id=93617b46711cc65d resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:18:11,686 INFO [lms_backend.main] [main.py:74] [trace_id=884313dc3c41736c516f8ab670d2dcc7 span_id=93617b46711cc65d resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-07 HTTP/1.1" 200 OK
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-07 HTTP/1.1" 200
+backend-1  | 2026-03-31 19:18:12,974 INFO [lms_backend.main] [main.py:62] [trace_id=cfa6865adf48372781e93743b3b1df1f span_id=713797922cac83fb resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:18:12,975 INFO [lms_backend.auth] [auth.py:30] [trace_id=cfa6865adf48372781e93743b3b1df1f span_id=713797922cac83fb resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:18:12,978 INFO [lms_backend.main] [main.py:74] [trace_id=cfa6865adf48372781e93743b3b1df1f span_id=713797922cac83fb resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-08 HTTP/1.1" 200
+backend-1  | INFO:     172.18.0.9:54940 - "GET /analytics/pass-rates?lab=lab-08 HTTP/1.1" 200 OK
+backend-1  | 2026-03-31 19:33:33,981 INFO [lms_backend.main] [main.py:62] [trace_id=65ab9df5e65eeabf4fde1cb6053e238d span_id=9c1903e59fd0a820 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:33:33,982 INFO [lms_backend.auth] [auth.py:30] [trace_id=65ab9df5e65eeabf4fde1cb6053e238d span_id=9c1903e59fd0a820 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:33:33,982 INFO [lms_backend.db.items] [items.py:16] [trace_id=65ab9df5e65eeabf4fde1cb6053e238d span_id=9c1903e59fd0a820 resource.service.name=Learning Management Service trace_sampled=True] - db_query
+backend-1  | 2026-03-31 19:33:33,986 INFO [lms_backend.main] [main.py:74] [trace_id=65ab9df5e65eeabf4fde1cb6053e238d span_id=9c1903e59fd0a820 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.10:34444 - "GET /items/ HTTP/1.1" 200 OK
+backend-1  | INFO:     172.18.0.10:34444 - "GET /items/ HTTP/1.1" 200
+backend-1  | 2026-03-31 19:34:04,975 INFO [lms_backend.main] [main.py:62] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - request_started
+backend-1  | 2026-03-31 19:34:04,977 INFO [lms_backend.auth] [auth.py:30] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - auth_success
+backend-1  | 2026-03-31 19:34:04,977 INFO [lms_backend.db.items] [items.py:16] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - db_query
+backend-1  | 2026-03-31 19:34:04,983 ERROR [lms_backend.db.items] [items.py:23] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - db_query
+backend-1  | 2026-03-31 19:34:04,983 WARNING [lms_backend.routers.items] [items.py:23] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - items_list_failed_as_not_found
+	backend-1  | 2026-03-31 19:34:04,984 INFO [lms_backend.main] [main.py:74] [trace_id=8cea5b250b447589650c3f18e2d5aded span_id=1280cc69e73e4e82 resource.service.name=Learning Management Service trace_sampled=True] - request_completed
+backend-1  | INFO:     172.18.0.10:45858 - "GET /items/ HTTP/1.1" 404 Not Found
+backend-1  | INFO:     172.18.0.10:45858 - "GET /items/ HTTP/1.1" 404
+
 
 ## Task 3B — Traces
 
-<!-- Screenshots: healthy trace span hierarchy, error trace -->
+trace_id: 2f50c925b1b6af3f12db080f737bc413
+span: GET /items/ http send
+time: 2026-03-31T21:16:30.497617361Z
+Query used to retrieve traces: curl "http://localhost:42011/select/logsql/query?query=_stream:{resource_attr:service.name=\"Learning Management Service"}&limit=2"
+
+### Error trace
+Trace captured after stopping postgres container.
+
+Trace ID: `8cea5b250b447589650c3f18e2d5aded`
+- Span: `GET /items/ http send` — database connection failed
+- Error: `asyncpg.exceptions.InterfaceError: connection is closed`
+- The error span appeared at the db_query step — postgres was unreachable.
+
 
 ## Task 3C — Observability MCP tools
 
-<!-- Paste agent responses to "any errors in the last hour?" under normal and failure conditions -->
+Four MCP tools were added to a new `mcp-observability` server:
+- `logs_search` — search VictoriaLogs with LogsQL query
+- `logs_error_count` — count ERROR entries per service
+- `traces_list` — list recent traces for a service from VictoriaTraces
+- `traces_get` — fetch all spans for a specific trace ID
+
+Skill file: `nanobot/workspace/skills/observability/SKILL.md`
+
+### Agent response — normal conditions
+> Question asked: "Any errors in the last hour?" 
+Yes, there was 1 error in the Learning Management Service in the last hour. Here are the details:
+
+**Error Summary:**
+- **Type:** Database connection error
+- **Description:** Connection to the PostgreSQL database was closed unexpectedly
+- **Time:** 2026-03-31 19:34:04 UTC (about 1 hour 41 minutes ago)
+- **Operation:** A SELECT query on the 'item' table failed
+
+**Technical Details:**
+The error occurred when the application tried to execute a database query to select items from the database. It appears the connection to the PostgreSQL database using asyncpg was closed during the operation.
+
+Would you like me to check for any other services or get more detailed information about this error?
+
+
 
 ## Task 4A — Multi-step investigation
 

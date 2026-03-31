@@ -32,6 +32,14 @@ if "webchat" in config.get("channels", {}):
     config["channels"]["webchat"]["host"] = os.environ.get("NANOBOT_WEBCHAT_CONTAINER_ADDRESS", "0.0.0.0")
     config["channels"]["webchat"]["port"] = int(os.environ.get("NANOBOT_WEBCHAT_CONTAINER_PORT", "8765"))
 
+
+# Observability MCP server env vars
+if "observability" in config["tools"]["mcpServers"]:
+    config["tools"]["mcpServers"]["observability"]["env"] = {
+        "VICTORIALOGS_URL": os.environ.get("VICTORIALOGS_URL", "http://victorialogs:9428"),
+        "VICTORIATRACES_URL": os.environ.get("VICTORIATRACES_URL", "http://victoriatraces:10428"),
+    }
+
 with open(resolved_path, "w") as f:
     json.dump(config, f, indent=2)
 
