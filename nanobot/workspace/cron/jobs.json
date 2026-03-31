@@ -1,4 +1,34 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "a65fb51e",
+      "name": "Check system health: Run obser",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "atMs": null,
+        "everyMs": 120000,
+        "expr": null,
+        "tz": null
+      },
+      "payload": {
+        "kind": "agent_turn",
+        "message": "Check system health: Run observability health check for Learning Management Service, look for errors in the last 2 minutes, search for recent errors with logs_search, and if any trace_id is found, get the trace details. Report a summary of findings or state that the system looks healthy if no errors are found.",
+        "deliver": true,
+        "channel": "webchat",
+        "to": "80f2d229-abd1-49af-a886-84f0cf656830"
+      },
+      "state": {
+        "nextRunAtMs": 1774998685819,
+        "lastRunAtMs": null,
+        "lastStatus": null,
+        "lastError": null,
+        "runHistory": []
+      },
+      "createdAtMs": 1774998565819,
+      "updatedAtMs": 1774998565819,
+      "deleteAfterRun": false
+    }
+  ]
 }

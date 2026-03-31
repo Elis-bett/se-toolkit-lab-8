@@ -1,16 +1,9 @@
 # Heartbeat Tasks
 
-This file is checked every 30 minutes by your nanobot agent.
-Add tasks below that you want the agent to work on periodically.
+This file contains tasks that should be executed on a regular heartbeat interval.
 
-If this file has no tasks (only headers and comments), the agent will skip the heartbeat.
+## Current Monitoring Tasks
 
-## Active Tasks
-
-<!-- Add your periodic tasks below this line -->
-
-
-## Completed
-
-<!-- Move completed tasks here or delete them -->
-
+- Monitor Learning Management Service for errors every 2 minutes
+- Check for backend errors in the last 2 minutes
+- Post short summaries of system status
